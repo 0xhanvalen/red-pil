@@ -15,7 +15,7 @@ describe("CodeRepository", () => {
     it("should initialize faunadb client with the secret from env", () => {
         new CodeRepository();
         expect(faunadb.Client).toHaveBeenCalledTimes(1);
-        expect(faunadb.Client).toHaveBeenCalledWith({ secret: process.env.FAUNADB_SECRET });
+        expect(faunadb.Client).toHaveBeenCalledWith({ secret: process.env.FAUNADB_SECRET, domain: "db.us.fauna.com" });
     });
 
     describe("isValid", () => {
